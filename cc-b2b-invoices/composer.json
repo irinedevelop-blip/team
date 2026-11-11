@@ -1,0 +1,12 @@
+{
+  "name": "csscable/cc-b2b-invoices",
+  "description": "PDF-счета на оплату для WooCommerce",
+  "type": "wordpress-plugin",
+  "require": {
+    "dompdf/dompdf": "^3.0"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  }
+}

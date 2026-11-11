@@ -1,0 +1,619 @@
+/*
+ * CSS Cable B2B — страница авторизации
+ */
+
+:root {
+	--cc-login-navy: #001d3d;
+	--cc-login-red: #f23b4f;
+	--cc-login-red-dark: #da3043;
+	--cc-login-white: #ffffff;
+	--cc-login-soft: #f7f8fa;
+	--cc-login-text: #152235;
+	--cc-login-muted: #667085;
+	--cc-login-line: #d9dee7;
+	--cc-login-error: #b42318;
+	--cc-login-success: #087443;
+}
+
+/* Общая страница */
+
+html {
+	background: var(--cc-login-white);
+}
+
+body.login {
+	display: flex;
+	min-height: 100vh;
+	min-height: 100dvh;
+	align-items: center;
+	margin: 0;
+	padding: 40px 24px;
+	overflow-x: hidden;
+	background: var(--cc-login-white);
+	color: var(--cc-login-text);
+	font-family:
+		"Inter",
+		-apple-system,
+		BlinkMacSystemFont,
+		"Segoe UI",
+		sans-serif;
+	box-sizing: border-box;
+}
+
+body.login *,
+body.login *::before,
+body.login *::after {
+	box-sizing: border-box;
+}
+
+/* Левая фирменная панель */
+
+.cc-login-hero {
+	position: fixed;
+	z-index: 0;
+	top: 0;
+	right: 50%;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 64px clamp(40px, 6vw, 100px);
+	overflow: hidden;
+	background: var(--cc-login-navy);
+	color: var(--cc-login-white);
+}
+
+.cc-login-hero::before,
+.cc-login-hero::after {
+	position: absolute;
+	width: 90px;
+	height: 90px;
+	content: "";
+	pointer-events: none;
+}
+
+ 
+
+.cc-login-hero__content {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	max-width: 540px;
+}
+
+/* Логотип */
+
+.cc-login-brand {
+	display: block;
+	width: 120px;
+	margin: 0 0 54px;
+	text-decoration: none;
+}
+
+.cc-login-brand__logo {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0;
+	border: 0;
+	object-fit: contain;
+}
+
+
+
+/* Текст левой панели */
+
+.cc-login-hero h2 {
+	max-width: 510px;
+	margin: 0 0 20px;
+	color: var(--cc-login-white);
+	font-size: clamp(36px, 4vw, 54px);
+	font-weight: 650;
+	line-height: 1.08;
+	letter-spacing: -2px;
+}
+
+.cc-login-hero__lead {
+	max-width: 480px;
+	margin: 0;
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 17px;
+	line-height: 1.65;
+}
+
+.cc-login-benefits {
+	display: grid;
+	gap: 12px;
+	margin: 44px 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.cc-login-benefits li {
+	display: flex;
+	align-items: center;
+	gap: 13px;
+	color: rgba(255, 255, 255, 0.86);
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.cc-login-benefits__icon {
+	display: inline-flex;
+	width: 28px;
+	height: 28px;
+	flex: 0 0 28px;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 7px;
+	color: var(--cc-login-red);
+	font-size: 14px;
+	font-weight: 800;
+}
+
+/* Правая часть */
+
+body.login #login {
+	position: relative;
+	z-index: 2;
+	width: 420px;
+	margin: 0 0 0 calc(75% - 210px);
+	padding: 0;
+}
+
+body.login #login > h1.wp-login-logo {
+	display: none;
+}
+
+/* Заголовок формы */
+
+.cc-login-heading {
+	margin: 0 0 34px;
+}
+
+.cc-login-heading__eyebrow {
+	display: block;
+	margin-bottom: 12px;
+	color: var(--cc-login-red);
+	font-size: 12px;
+	font-weight: 750;
+	letter-spacing: 1.6px;
+	text-transform: uppercase;
+}
+
+.cc-login-heading h1 {
+	margin: 0 0 12px;
+	color: var(--cc-login-navy);
+	font-size: 34px;
+	font-weight: 700;
+	line-height: 1.15;
+	letter-spacing: -1px;
+}
+
+.cc-login-heading p {
+	margin: 0;
+	color: var(--cc-login-muted);
+	font-size: 15px;
+	line-height: 1.6;
+}
+
+/* Форма */
+
+body.login form {
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	box-shadow: none;
+}
+
+body.login form > p,
+body.login .user-pass-wrap {
+	margin: 0 0 20px;
+}
+
+body.login label {
+	display: block;
+	margin-bottom: 8px;
+	color: var(--cc-login-navy);
+	font-size: 13px;
+	font-weight: 650;
+}
+
+body.login input[type="text"],
+body.login input[type="email"],
+body.login input[type="password"] {
+	width: 100%;
+	min-height: 50px;
+	margin: 0;
+	padding: 11px 14px;
+	border: 1px solid var(--cc-login-line);
+	border-radius: 7px;
+	outline: none;
+	background: var(--cc-login-white);
+	box-shadow: none;
+	color: var(--cc-login-text);
+	font-size: 15px;
+	line-height: 1.4;
+	transition:
+		border-color 160ms ease,
+		box-shadow 160ms ease;
+}
+
+body.login input[type="text"]:hover,
+body.login input[type="email"]:hover,
+body.login input[type="password"]:hover {
+	border-color: #aeb7c4;
+}
+
+body.login input[type="text"]:focus,
+body.login input[type="email"]:focus,
+body.login input[type="password"]:focus {
+	border-color: var(--cc-login-navy);
+	box-shadow: 0 0 0 3px rgba(0, 29, 61, 0.09);
+}
+
+/* Поле пароля */
+
+body.login .wp-pwd {
+	position: relative;
+}
+
+body.login .wp-pwd input {
+	padding-right: 50px;
+}
+
+body.login .button.wp-hide-pw {
+	top: 4px;
+	right: 4px;
+	width: 42px;
+	height: 42px;
+	min-width: 42px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+	color: var(--cc-login-muted);
+}
+
+body.login .button.wp-hide-pw:hover,
+body.login .button.wp-hide-pw:focus {
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+	color: var(--cc-login-navy);
+}
+
+/* Запомнить меня */
+
+body.login form .forgetmenot {
+	float: none;
+	display: flex;
+	align-items: center;
+	margin: 4px 0 24px;
+}
+
+body.login .forgetmenot label {
+	display: flex;
+	align-items: center;
+	margin: 0;
+	color: var(--cc-login-muted);
+	font-size: 13px;
+	font-weight: 500;
+}
+
+body.login input[type="checkbox"] {
+	width: 17px;
+	height: 17px;
+	margin: 0 8px 0 0;
+	border: 1px solid var(--cc-login-line);
+	border-radius: 4px;
+	box-shadow: none;
+}
+
+body.login input[type="checkbox"]:focus {
+	border-color: var(--cc-login-red);
+	box-shadow: 0 0 0 2px rgba(242, 59, 79, 0.12);
+}
+
+body.login input[type="checkbox"]:checked {
+	border-color: var(--cc-login-red);
+	background: var(--cc-login-red);
+}
+
+body.login input[type="checkbox"]:checked::before {
+	width: 20px;
+	margin: -2px 0 0 -3px;
+	color: var(--cc-login-white);
+}
+
+/* Основная кнопка */
+
+body.login .submit {
+	margin: 0;
+}
+
+body.login .button-primary {
+	display: inline-flex;
+	width: 100%;
+	min-height: 50px;
+	align-items: center;
+	justify-content: center;
+	padding: 11px 22px;
+	border: 1px solid var(--cc-login-red);
+	border-radius: 7px;
+	background: var(--cc-login-red);
+	box-shadow: none;
+	color: var(--cc-login-white);
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1;
+	text-shadow: none;
+	transition:
+		background-color 160ms ease,
+		border-color 160ms ease,
+		transform 160ms ease;
+}
+
+body.login .button-primary:hover,
+body.login .button-primary:focus {
+	border-color: var(--cc-login-red-dark);
+	background: var(--cc-login-red-dark);
+	box-shadow: none;
+	color: var(--cc-login-white);
+}
+
+body.login .button-primary:active {
+	border-color: var(--cc-login-red-dark);
+	background: var(--cc-login-red-dark);
+	transform: translateY(1px);
+}
+
+/* Ссылки */
+.login h1 {
+    text-align: left!important;
+}
+body.login #nav {
+	margin: 22px 0 0;
+	padding: 0;
+	text-align: center;
+}
+
+body.login #nav a {
+	color: var(--cc-login-muted);
+	font-size: 13px;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+body.login #nav a:hover,
+body.login #nav a:focus {
+	color: var(--cc-login-red);
+}
+
+body.login #backtoblog {
+	display: none;
+}
+
+body.login .privacy-policy-page-link {
+	margin: 20px 0 0;
+	text-align: center;
+}
+
+body.login .privacy-policy-page-link a {
+	color: var(--cc-login-muted);
+	font-size: 12px;
+	text-decoration: none;
+}
+
+body.login .language-switcher {
+	display: none;
+}
+
+/* Системные сообщения */
+
+body.login .message,
+body.login #login_error,
+body.login .success {
+	margin: 0 0 24px;
+	padding: 13px 15px;
+	border: 1px solid var(--cc-login-line);
+	border-left-width: 3px;
+	border-radius: 6px;
+	background: var(--cc-login-soft);
+	box-shadow: none;
+	color: var(--cc-login-text);
+	font-size: 13px;
+	line-height: 1.55;
+}
+
+body.login #login_error {
+	border-color: #f0c5c1;
+	border-left-color: var(--cc-login-error);
+	background: #fff8f7;
+}
+
+body.login .message,
+body.login .success {
+	border-left-color: var(--cc-login-success);
+}
+
+body.login #login_error a,
+body.login .message a {
+	color: var(--cc-login-red);
+}
+
+/* Подсказки WordPress */
+
+body.login .wp-tooltip__toggle {
+	color: var(--cc-login-muted);
+}
+
+body.login .wp-tooltip__bubble {
+	border-radius: 6px;
+}
+
+/* Планшеты */
+
+@media (max-width: 1100px) {
+	.cc-login-hero {
+		padding-right: 52px;
+		padding-left: 52px;
+	}
+
+	.cc-login-hero h2 {
+		font-size: 42px;
+	}
+}
+
+@media (min-width: 761px) and (max-width: 960px) {
+	.cc-login-hero {
+		right: 56%;
+		padding: 48px 36px;
+	}
+
+	.cc-login-brand {
+	width: 120px;
+	margin-bottom: 36px;
+}
+
+
+	.cc-login-hero__lead {
+		font-size: 15px;
+	}
+
+	.cc-login-benefits {
+		margin-top: 32px;
+	}
+
+	body.login #login {
+		width: 380px;
+		margin-left: calc(72% - 190px);
+	}
+
+	.cc-login-heading h1 {
+		font-size: 31px;
+	}
+}
+
+/* Телефоны */
+
+@media (max-width: 760px) {
+	body.login {
+		display: block;
+		min-height: 100vh;
+		padding: 0;
+		background: var(--cc-login-white);
+	}
+
+	body.login #login {
+		width: 100%;
+		max-width: none;
+		margin: 0;
+		padding: 0 0 40px;
+	}
+
+	.cc-login-hero {
+		position: relative;
+		inset: auto;
+		display: block;
+		width: 100%;
+		min-height: 245px;
+		padding: 28px 24px 36px;
+	}
+
+	.cc-login-hero::before,
+	.cc-login-hero::after {
+		display: none;
+	}
+
+	.cc-login-hero__content {
+		max-width: 480px;
+		margin: 0 auto;
+	}
+
+	.cc-login-brand {
+		margin-bottom: 40px;
+	}
+
+	.cc-login-brand__mark {
+		width: 38px;
+		height: 38px;
+		flex-basis: 38px;
+		font-size: 14px;
+	}
+
+	.cc-login-hero h2 {
+		margin-bottom: 11px;
+		font-size: 30px;
+		letter-spacing: -1px;
+	}
+
+	.cc-login-hero__lead {
+		font-size: 14px;
+		line-height: 1.55;
+	}
+
+	.cc-login-benefits {
+		display: none;
+	}
+
+	.cc-login-heading {
+		width: calc(100% - 48px);
+		max-width: 432px;
+		margin: 38px auto 28px;
+	}
+
+	.cc-login-heading h1 {
+		font-size: 29px;
+	}
+
+	body.login #login form {
+		width: calc(100% - 48px);
+		max-width: 432px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	body.login #login_error,
+	body.login #login > .message,
+	body.login #login > .success {
+		width: calc(100% - 48px);
+		max-width: 432px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	body.login #nav,
+	body.login .privacy-policy-page-link {
+		width: calc(100% - 48px);
+		max-width: 432px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	body.login #nav {
+		margin-top: 22px;
+	}
+}
+
+@media (max-width: 380px) {
+	.cc-login-hero {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+
+	.cc-login-heading,
+	body.login #login form,
+	body.login #login_error,
+	body.login #login > .message,
+	body.login #login > .success,
+	body.login #nav,
+	body.login .privacy-policy-page-link {
+		width: calc(100% - 40px);
+	}
+}

@@ -1,0 +1,1051 @@
+/*
+ * CSS Cable — личный кабинет
+ */
+
+body.woocommerce-account .cc-content {
+	width: 100%;
+	max-width: none;
+	padding: 0;
+}
+
+body.woocommerce-account .cc-page,
+body.woocommerce-account .cc-entry-content {
+	width: 100%;
+	max-width: none;
+	margin: 0;
+	padding: 0;
+}
+
+body.woocommerce-account .cc-entry-content > .woocommerce {
+	display: grid;
+	grid-template-columns: 220px minmax(0, 1fr);
+	width: 100%;
+	min-height: calc(100vh - var(--topbar-height, 64px));
+	margin: 0;
+	padding: 0;
+}
+
+/* Вторичное меню */
+
+/* Синее подменю личного кабинета */
+
+body.woocommerce-account .woocommerce-MyAccount-navigation {
+	float: none;
+	width: auto;
+	min-width: 0;
+	margin: 0;
+	padding: 26px 14px 18px;
+	border: 0;
+	border-right: 1px solid #0c3158;
+	background: #001d3d;
+	color: #fff;
+}
+
+.cc-account-nav__header {
+	display: grid;
+	gap: 5px;
+	margin-bottom: 24px;
+	padding: 0 11px;
+}
+
+.cc-account-nav__header span {
+	color: rgba(255, 255, 255, 0.48);
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 1.3px;
+	text-transform: uppercase;
+}
+
+.cc-account-nav__header strong {
+	color: #fff;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1.3;
+}
+
+.cc-account-nav__list {
+	display: flex;
+	min-height: calc(100vh - 165px);
+	flex-direction: column;
+	gap: 4px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.cc-account-nav__item {
+	margin: 0;
+	padding: 0;
+}
+
+.cc-account-nav__item a {
+	display: flex;
+	min-height: 43px;
+	align-items: center;
+	gap: 11px;
+	padding: 10px 11px;
+	border: 1px solid transparent;
+	border-radius: 6px;
+	background: transparent;
+	color: rgba(255, 255, 255, 0.72);
+	font-size: 12px;
+	font-weight: 550;
+	line-height: 1.3;
+	text-decoration: none;
+	transition:
+		background-color 140ms ease,
+		border-color 140ms ease,
+		color 140ms ease;
+}
+
+.cc-account-nav__item a:hover {
+	border-color: rgba(255, 255, 255, 0.08);
+	background: #0a2c50;
+	color: #fff;
+}
+
+.cc-account-nav__item.is-active a {
+	border-color: #f23b4f;
+	background: #f23b4f;
+	color: #fff;
+	font-weight: 700;
+}
+
+.cc-account-nav__icon {
+	display: flex;
+	width: 27px;
+	height: 20px;
+	flex: 0 0 20px;
+	align-items: center;
+	justify-content: center;
+	color: currentColor;
+}
+
+.cc-account-nav__icon svg {
+	display: block;
+	width: 25px;
+	height: 39px;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 1.7;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.cc-account-nav__item.is-logout {
+	margin-top: auto;
+	padding-top: 15px;
+	border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.cc-account-nav__item.is-logout a {
+	color: rgba(255, 255, 255, 0.58);
+}
+
+.cc-account-nav__item.is-logout a:hover {
+	border-color: rgba(242, 59, 79, 0.24);
+	background: rgba(242, 59, 79, 0.12);
+	color: #fff;
+}
+
+
+.cc-account-nav__item.is-logout a:hover {
+	background: #fff0f2;
+	color: #d92f43;
+}
+
+/* Контент */
+
+body.woocommerce-account .woocommerce-MyAccount-content {
+	float: none;
+	width: 100%;
+	min-width: 0;
+	margin: 0;
+	padding: 32px;
+	background: #f7f8fa;
+}
+
+.cc-account-dashboard,
+.cc-account-edit {
+	width: 100%;
+	max-width: 1180px;
+	margin: 0;
+}
+
+/* Заголовки страниц */
+
+.cc-account-page-header,
+.cc-account-edit__header {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 24px;
+	margin-bottom: 26px;
+}
+
+.cc-account-page-header__eyebrow,
+.cc-account-edit__eyebrow {
+	display: block;
+	margin-bottom: 8px;
+	color: #f23b4f;
+	font-size: 10px;
+	font-weight: 800;
+	letter-spacing: 1.4px;
+	text-transform: uppercase;
+}
+
+.cc-account-page-header h1,
+.cc-account-edit__header h1,
+.woocommerce-MyAccount-content > h2,
+.woocommerce-MyAccount-content > h3 {
+	margin: 0 0 8px;
+	color: #001d3d;
+	font-size: 29px;
+	font-weight: 700;
+	line-height: 1.2;
+	letter-spacing: -0.7px;
+}
+
+.cc-account-page-header p,
+.cc-account-edit__header p {
+	margin: 0;
+	color: #667085;
+	font-size: 13px;
+	line-height: 1.55;
+}
+
+.cc-account-primary-button,
+.cc-account-edit__back {
+	display: inline-flex;
+	min-height: 40px;
+	align-items: center;
+	justify-content: center;
+	gap: 7px;
+	padding: 9px 15px;
+	border: 1px solid #f23b4f;
+	border-radius: 6px;
+	background: #f23b4f;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.cc-account-primary-button:hover {
+	border-color: #d92f43;
+	background: #d92f43;
+	color: #fff;
+}
+
+.cc-account-edit__back {
+	border-color: #dce1e8;
+	background: #fff;
+	color: #475467;
+}
+
+.cc-account-edit__back:hover {
+	border-color: #bfc7d2;
+	color: #001d3d;
+}
+
+/* Статистика */
+
+.cc-account-stats {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 14px;
+	margin-bottom: 20px;
+}
+
+.cc-account-stat {
+	display: flex;
+	min-width: 0;
+	align-items: center;
+	gap: 14px;
+	padding: 18px;
+	border: 1px solid #e1e5ea;
+	border-radius: 8px;
+	background: #fff;
+}
+
+.cc-account-stat__icon {
+	display: flex;
+	width: 42px;
+	height: 42px;
+	flex: 0 0 42px;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #e2e6eb;
+	border-radius: 7px;
+	background: #fafbfc;
+	color: #001d3d;
+}
+
+.cc-account-stat__icon svg {
+	width: 20px;
+	height: 20px;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 1.7;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.cc-account-stat > div:last-child {
+	display: grid;
+	min-width: 0;
+	gap: 5px;
+}
+
+.cc-account-stat span {
+	color: #7b8492;
+	font-size: 11px;
+	font-weight: 600;
+}
+
+.cc-account-stat strong {
+	overflow: hidden;
+	color: #001d3d;
+	font-size: 18px;
+	font-weight: 700;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.cc-account-stat .cc-account-stat__success {
+	color: #087443;
+	font-size: 14px;
+}
+
+.cc-account-stat .cc-account-stat__email {
+	font-size: 13px;
+}
+
+/* Панели обзора */
+
+.cc-account-dashboard__grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+	gap: 18px;
+}
+
+.cc-account-panel,
+.cc-account-card {
+	overflow: hidden;
+	border: 1px solid #e1e5ea;
+	border-radius: 8px;
+	background: #fff;
+}
+
+.cc-account-panel__header,
+.cc-account-card__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 18px;
+	padding: 17px 19px;
+	border-bottom: 1px solid #edf0f3;
+	background: #fafbfc;
+}
+
+.cc-account-panel__header h2,
+.cc-account-card__header h2 {
+	margin: 0 0 4px;
+	color: #001d3d;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.cc-account-panel__header p,
+.cc-account-card__header p {
+	margin: 0;
+	color: #87909e;
+	font-size: 11px;
+	line-height: 1.4;
+}
+
+.cc-account-panel__header > a {
+	color: #f23b4f;
+	font-size: 11px;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.cc-account-details {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cc-account-details > div {
+	display: grid;
+	gap: 5px;
+	padding: 17px 19px;
+	border-right: 1px solid #edf0f3;
+	border-bottom: 1px solid #edf0f3;
+}
+
+.cc-account-details > div:nth-child(2n) {
+	border-right: 0;
+}
+
+.cc-account-details > div:nth-last-child(-n + 2) {
+	border-bottom: 0;
+}
+
+.cc-account-details span {
+	color: #8a94a3;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 0.4px;
+	text-transform: uppercase;
+}
+
+.cc-account-details strong {
+	overflow: hidden;
+	color: #344054;
+	font-size: 13px;
+	font-weight: 600;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.cc-account-actions {
+	display: grid;
+}
+
+.cc-account-actions a {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	padding: 16px 19px;
+	border-bottom: 1px solid #edf0f3;
+	color: #344054;
+	font-size: 12px;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.cc-account-actions a:last-child {
+	border-bottom: 0;
+}
+
+.cc-account-actions a:hover {
+	background: #fafbfc;
+	color: #001d3d;
+}
+
+.cc-account-actions strong {
+	color: #f23b4f;
+	font-size: 11px;
+}
+
+/* Страница профиля */
+
+.cc-account-edit__layout {
+	display: block;
+}
+
+.cc-account-summary {
+	display: none;
+}
+
+.cc-account-form {
+	display: grid;
+	width: 100%;
+	gap: 18px;
+	margin: 0;
+	padding: 0;
+}
+
+.cc-account-card__header {
+	justify-content: flex-start;
+}
+
+.cc-account-card__icon {
+	display: flex;
+	width: 36px;
+	height: 36px;
+	flex: 0 0 36px;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #dfe4ea;
+	border-radius: 6px;
+	background: #fff;
+	color: #001d3d;
+}
+
+.cc-account-card__icon svg {
+	width: 18px;
+	height: 18px;
+}
+
+.cc-account-card__body {
+	display: grid;
+	gap: 19px;
+	padding: 21px 19px 23px;
+}
+
+.cc-account-form__grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 17px;
+}
+
+.cc-account-field {
+	display: grid;
+	gap: 7px;
+}
+
+.cc-account-field label,
+.woocommerce-MyAccount-content form label {
+	color: #344054;
+	font-size: 11px;
+	font-weight: 700;
+}
+
+.cc-account-field label span {
+	color: #f23b4f;
+}
+
+.cc-account-field input,
+.woocommerce-MyAccount-content input[type="text"],
+.woocommerce-MyAccount-content input[type="email"],
+.woocommerce-MyAccount-content input[type="password"],
+.woocommerce-MyAccount-content input[type="tel"],
+.woocommerce-MyAccount-content select,
+.woocommerce-MyAccount-content textarea {
+	width: 100%;
+	min-height: 42px;
+	margin: 0;
+	padding: 9px 11px;
+	border: 1px solid #d7dde5;
+	border-radius: 6px;
+	outline: none;
+	background: #fff;
+	box-shadow: none;
+	color: #172033;
+	font-family: inherit;
+	font-size: 13px;
+}
+
+.woocommerce-MyAccount-content textarea {
+	min-height: 100px;
+	resize: vertical;
+}
+
+.cc-account-field input:focus,
+.woocommerce-MyAccount-content input:focus,
+.woocommerce-MyAccount-content select:focus,
+.woocommerce-MyAccount-content textarea:focus {
+	border-color: #001d3d;
+	box-shadow: 0 0 0 3px rgba(0, 29, 61, 0.08);
+}
+
+.cc-account-field small {
+	color: #8a94a3;
+	font-size: 10px;
+	line-height: 1.45;
+}
+
+.cc-account-password {
+	position: relative;
+}
+
+.cc-account-password input {
+	padding-right: 44px;
+}
+
+.cc-account-password__toggle {
+	position: absolute;
+	top: 50%;
+	right: 5px;
+	display: flex;
+	width: 32px;
+	height: 32px;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: #7b8492;
+	cursor: pointer;
+	transform: translateY(-50%);
+}
+
+.cc-account-password__toggle svg {
+	width: 17px;
+	height: 17px;
+}
+
+.cc-account-form__footer {
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+}
+
+.cc-account-button,
+.woocommerce-MyAccount-content button.button,
+.woocommerce-MyAccount-content a.button {
+	display: inline-flex;
+	min-height: 40px;
+	align-items: center;
+	justify-content: center;
+	padding: 9px 15px;
+	border: 1px solid #f23b4f;
+	border-radius: 6px;
+	background: #f23b4f;
+	box-shadow: none;
+	color: #fff;
+	font-family: inherit;
+	font-size: 12px;
+	font-weight: 700;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.cc-account-button--secondary {
+	border-color: #d7dde5;
+	background: #fff;
+	color: #475467;
+}
+
+/* Таблицы заказов и оплат */
+
+.woocommerce-MyAccount-content table.shop_table {
+	width: 100%;
+	margin: 0;
+	overflow: hidden;
+	border: 1px solid #e1e5ea;
+	border-collapse: separate;
+	border-spacing: 0;
+	border-radius: 8px;
+	background: #fff;
+}
+
+.woocommerce-MyAccount-content table.shop_table th {
+	padding: 12px 14px;
+	border: 0;
+	border-bottom: 1px solid #e8ebef;
+	background: #fafbfc;
+	color: #667085;
+	font-size: 10px;
+	font-weight: 800;
+	letter-spacing: 0.5px;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+.woocommerce-MyAccount-content table.shop_table td {
+	padding: 14px;
+	border: 0;
+	border-bottom: 1px solid #edf0f3;
+	color: #344054;
+	font-size: 12px;
+	vertical-align: middle;
+}
+
+.woocommerce-MyAccount-content table.shop_table tr:last-child td {
+	border-bottom: 0;
+}
+
+.woocommerce-MyAccount-content table.shop_table a {
+	font-weight: 700;
+	text-decoration: none;
+}
+
+/* Страница адресов */
+
+.cc-address-page {
+	width: 100%;
+	max-width: 1080px;
+}
+
+.cc-address-page__header {
+	margin-bottom: 24px;
+}
+
+.cc-address-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 18px;
+}
+
+.cc-address-card {
+	display: flex;
+	min-height: 290px;
+	flex-direction: column;
+	overflow: hidden;
+	border: 1px solid #dfe4ea;
+	border-radius: 8px;
+	background: #fff;
+}
+
+.cc-address-card__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	padding: 18px 19px;
+	border-bottom: 1px solid #edf0f3;
+	background: #fafbfc;
+}
+
+.cc-address-card__title {
+	display: flex;
+	min-width: 0;
+	align-items: center;
+	gap: 12px;
+}
+
+.cc-address-card__icon {
+	display: flex;
+	width: 38px;
+	height: 38px;
+	flex: 0 0 38px;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #dfe5eb;
+	border-radius: 7px;
+	background: #fff;
+	color: #001d3d;
+}
+
+.cc-address-card__icon svg {
+	width: 19px;
+	height: 19px;
+}
+
+.cc-address-card__eyebrow {
+	display: block;
+	margin-bottom: 3px;
+	color: #929ba8;
+	font-size: 9px;
+	font-weight: 750;
+	letter-spacing: 0.7px;
+	text-transform: uppercase;
+}
+
+.cc-address-card__title h2 {
+	margin: 0;
+	color: #001d3d;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1.3;
+}
+
+.cc-address-card__edit {
+	display: inline-flex;
+	min-height: 32px;
+	flex: 0 0 auto;
+	align-items: center;
+	gap: 6px;
+	padding: 7px 10px;
+	border: 1px solid #dce1e8;
+	border-radius: 5px;
+	background: #fff;
+	color: #526071;
+	font-size: 10px;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.cc-address-card__edit:hover {
+	border-color: #f23b4f;
+	color: #f23b4f;
+}
+
+.cc-address-card__edit svg {
+	width: 13px;
+	height: 13px;
+}
+
+.cc-address-card__body {
+	display: flex;
+	flex: 1;
+	align-items: flex-start;
+	padding: 22px 19px;
+}
+
+.cc-address-card__body address {
+	margin: 0;
+	color: #475467;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 1.8;
+}
+
+.cc-address-card__empty {
+	align-self: center;
+	width: 100%;
+	text-align: center;
+}
+
+.cc-address-card__empty::before {
+	display: block;
+	width: 34px;
+	height: 2px;
+	margin: 0 auto 17px;
+	background: #f23b4f;
+	content: "";
+}
+
+.cc-address-card__empty strong {
+	display: block;
+	margin-bottom: 7px;
+	color: #001d3d;
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.cc-address-card__empty p {
+	max-width: 260px;
+	margin: 0 auto;
+	color: #8a94a3;
+	font-size: 11px;
+	line-height: 1.55;
+}
+
+.cc-address-card__footer {
+	padding: 13px 19px;
+	border-top: 1px solid #edf0f3;
+}
+
+.cc-address-card__footer a {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: #f23b4f;
+	font-size: 11px;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.cc-address-card__footer a:hover {
+	color: #d92f43;
+}
+
+.cc-address-page__notice {
+	display: flex;
+	align-items: flex-start;
+	gap: 13px;
+	margin-top: 18px;
+	padding: 16px 18px;
+	border: 1px solid #dce3eb;
+	border-radius: 7px;
+	background: #f2f5f8;
+}
+
+.cc-address-page__notice-icon {
+	display: flex;
+	width: 24px;
+	height: 24px;
+	flex: 0 0 24px;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	background: #001d3d;
+	color: #fff;
+	font-family: serif;
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.cc-address-page__notice strong {
+	display: block;
+	margin-bottom: 3px;
+	color: #001d3d;
+	font-size: 11px;
+	font-weight: 700;
+}
+
+.cc-address-page__notice p {
+	margin: 0;
+	color: #667085;
+	font-size: 11px;
+	line-height: 1.5;
+}
+
+/* Не даём стандартным стилям WooCommerce ломать сетку */
+
+.woocommerce-account .cc-address-grid .cc-address-card {
+	float: none !important;
+	width: 100% !important;
+	margin: 0 !important;
+}
+
+
+/* Стандартные формы адресов */
+
+.woocommerce-address-fields,
+.woocommerce-EditAccountForm,
+.woocommerce-Payment {
+	padding: 20px;
+	border: 1px solid #e1e5ea;
+	border-radius: 8px;
+	background: #fff;
+}
+
+.woocommerce-address-fields__field-wrapper {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 17px;
+}
+
+.woocommerce-address-fields .form-row {
+	float: none;
+	width: 100%;
+	margin: 0;
+}
+
+.woocommerce-address-fields .form-row-wide {
+	grid-column: 1 / -1;
+}
+
+/* Уведомления */
+
+.woocommerce-MyAccount-content .woocommerce-message,
+.woocommerce-MyAccount-content .woocommerce-error,
+.woocommerce-MyAccount-content .woocommerce-info {
+	margin: 0 0 20px;
+	padding: 13px 15px;
+	border: 1px solid #e0e5eb;
+	border-left-width: 3px;
+	border-radius: 6px;
+	background: #fff;
+	box-shadow: none;
+	color: #344054;
+	font-size: 12px;
+	line-height: 1.5;
+	list-style: none;
+}
+
+.woocommerce-MyAccount-content .woocommerce-message {
+	border-left-color: #12a66a;
+}
+
+.woocommerce-MyAccount-content .woocommerce-error {
+	border-left-color: #f23b4f;
+}
+
+.woocommerce-MyAccount-content .woocommerce-info {
+	border-left-color: #001d3d;
+}
+
+/* Адаптивность */
+
+@media (max-width: 1000px) {
+	body.woocommerce-account .cc-entry-content > .woocommerce {
+		grid-template-columns: 190px minmax(0, 1fr);
+	}
+
+	body.woocommerce-account .woocommerce-MyAccount-content {
+		padding: 24px;
+	}
+
+	.cc-account-stats {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.cc-account-dashboard__grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 760px) {
+	body.woocommerce-account .cc-entry-content > .woocommerce {
+		display: block;
+	}
+
+		body.woocommerce-account .woocommerce-MyAccount-navigation {
+		width: 100%;
+		padding: 12px 16px;
+		overflow-x: auto;
+		border: 0;
+		border-bottom: 1px solid #0c3158;
+		background: #001d3d;
+	}
+
+	.cc-account-nav__header {
+		display: none;
+	}
+
+	.cc-account-nav__list {
+		display: flex;
+		min-height: 0;
+		flex-direction: row;
+		gap: 5px;
+		width: max-content;
+	}
+
+	.cc-account-nav__item.is-logout {
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+
+	.cc-account-nav__item a {
+		min-height: 38px;
+		white-space: nowrap;
+	}
+
+
+	body.woocommerce-account .woocommerce-MyAccount-content {
+		padding: 22px 18px 40px;
+	}
+
+	.cc-account-page-header,
+	.cc-account-edit__header {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.cc-account-stats,
+	.cc-account-form__grid,
+	.woocommerce-Addresses,
+	.woocommerce-address-fields__field-wrapper {
+		grid-template-columns: 1fr;
+	}
+
+	.woocommerce-address-fields .form-row-wide {
+		grid-column: auto;
+	}
+}
+
+@media (max-width: 480px) {
+	.cc-account-stats {
+		grid-template-columns: 1fr;
+	}
+
+	.cc-account-page-header h1,
+	.cc-account-edit__header h1 {
+		font-size: 25px;
+	}
+
+	.cc-account-details {
+		grid-template-columns: 1fr;
+	}
+
+	.cc-account-details > div {
+		border-right: 0;
+		border-bottom: 1px solid #edf0f3;
+	}
+
+	.cc-account-details > div:nth-last-child(-n + 2) {
+		border-bottom: 1px solid #edf0f3;
+	}
+
+	.cc-account-details > div:last-child {
+		border-bottom: 0;
+	}
+
+	.cc-account-form__footer {
+		align-items: stretch;
+		flex-direction: column-reverse;
+	}
+
+	.cc-account-button,
+	.cc-account-primary-button {
+		width: 100%;
+	}
+}

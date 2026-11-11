@@ -1,0 +1,179 @@
+/*
+ * Навигация разделов кабинета в верхней шапке.
+ */
+
+/* =========================================================
+   Скрываем старое меню внутри содержимого
+   ========================================================= */
+
+.cc-main
+:is(nav, div):has(> a[href*="cc_section=dashboard"]):has(> a[href*="cc_section=cabinet"]):has(> a[href*="cc_section=bonuses"]) {
+	display: none !important;
+}
+
+/* =========================================================
+   Верхняя шапка кабинета
+   ========================================================= */
+
+.cc-topbar--cabinet {
+	gap: 14px;
+	padding-right: 18px;
+	padding-left: 18px;
+	border-bottom-color: #dfe4ea;
+	background: #fff;
+}
+
+.cc-topbar-sections {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	gap: 3px;
+	margin: 0;
+	padding: 0;
+}
+
+.cc-topbar-sections__item {
+	position: relative;
+	display: inline-flex;
+	min-height: 38px;
+	align-items: center;
+	justify-content: center;
+	gap: 7px;
+	padding: 0 14px;
+	border: 1px solid transparent;
+	border-radius: 6px;
+	background: transparent;
+	color: #667085;
+	font-size: 11px;
+	font-weight: 700;
+	line-height: 1;
+	text-decoration: none;
+	white-space: nowrap;
+	transition:
+		background 0.15s ease,
+		border-color 0.15s ease,
+		color 0.15s ease;
+}
+
+.cc-topbar-sections__item svg {
+	width: 16px;
+	height: 16px;
+	flex: 0 0 16px;
+}
+
+.cc-topbar-sections__item:hover {
+	border-color: #dfe4ea;
+	background: #f7f8fa;
+	color: #001d3d;
+}
+
+.cc-topbar-sections__item.is-active {
+	border-color: #f23b4f;
+	background: #f23b4f;
+	color: #fff;
+}
+
+.cc-topbar-sections__item.is-active:hover {
+	border-color: #d92f43;
+	background: #d92f43;
+	color: #fff;
+}
+
+/*
+ * Тонкий фирменный маркер под активной вкладкой.
+ */
+.cc-topbar-sections__item.is-active::after {
+	position: absolute;
+	right: 12px;
+	bottom: -12px;
+	left: 12px;
+	height: 2px;
+	border-radius: 2px 2px 0 0;
+	background: #f23b4f;
+	content: "";
+}
+
+/* =========================================================
+   Убираем пустое место от старого меню
+   ========================================================= */
+
+body.cc-cabinet-section .cc-content {
+	padding-top: 22px;
+}
+
+body.cc-section-cabinet .cc-buyer-orders,
+body.cc-section-dashboard .cc-content > *,
+body.cc-section-bonuses .cc-content > * {
+	margin-top: 0 !important;
+}
+
+/* =========================================================
+   Планшет
+   ========================================================= */
+
+@media (max-width: 900px) {
+	.cc-topbar--cabinet {
+		gap: 8px;
+		padding-right: 12px;
+		padding-left: 12px;
+	}
+
+	.cc-topbar-sections__item {
+		padding: 0 10px;
+	}
+
+	.cc-topbar-sections__item svg {
+		display: none;
+	}
+
+	.cc-topbar--cabinet .cc-topbar__contract {
+		display: none;
+	}
+}
+
+/* =========================================================
+   Мобильная версия
+   ========================================================= */
+
+@media (max-width: 650px) {
+	.cc-topbar--cabinet {
+		position: sticky;
+		overflow: visible;
+		height: auto;
+		min-height: var(--topbar-height);
+		flex-wrap: wrap;
+		padding: 8px 10px;
+	}
+
+	.cc-topbar--cabinet .cc-mobile-menu {
+		align-self: center;
+	}
+
+	.cc-topbar-sections {
+		order: 3;
+		width: 100%;
+		height: auto;
+		overflow-x: auto;
+		padding-top: 5px;
+		border-top: 1px solid #edf0f3;
+		scrollbar-width: none;
+	}
+
+	.cc-topbar-sections::-webkit-scrollbar {
+		display: none;
+	}
+
+	.cc-topbar-sections__item {
+		min-height: 34px;
+		flex: 0 0 auto;
+		padding: 0 12px;
+	}
+
+	.cc-topbar-sections__item.is-active::after {
+		display: none;
+	}
+
+	.cc-topbar--cabinet .cc-topbar__spacer {
+		flex: 1;
+	}
+}

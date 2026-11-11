@@ -1,0 +1,633 @@
+/*
+ * Кабинет закупщика — история заказов.
+ */
+
+.cc-buyer-orders {
+	width: 100%;
+	color: #152235;
+}
+
+/* Скрываем старую шапку только у закупщика. */
+.cc-buyer-orders-page .cc-b2b-header {
+	display: none !important;
+}
+
+ 
+/* =========================================================
+   Шапка
+   ========================================================= */
+
+.cc-buyer-hero {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+	margin-bottom: 14px;
+	padding: 24px 26px;
+	border: 1px solid #0b3158;
+	border-radius: 8px;
+	background: #001d3d;
+	color: #fff;
+}
+
+.cc-buyer-hero__identity {
+	display: flex;
+	min-width: 0;
+	align-items: center;
+	gap: 16px;
+}
+
+.cc-buyer-hero__avatar {
+	display: flex;
+	width: 48px;
+	height: 48px;
+	flex: 0 0 48px;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	border-radius: 7px;
+	background: rgba(255, 255, 255, 0.1);
+	color: #fff;
+	font-size: 15px;
+	font-weight: 800;
+	letter-spacing: 0.04em;
+}
+
+.cc-buyer-hero__eyebrow {
+	margin-bottom: 5px;
+	color: #ff8995;
+	font-size: 9px;
+	font-weight: 800;
+	letter-spacing: 0.13em;
+	text-transform: uppercase;
+}
+
+.cc-buyer-hero h1 {
+	margin: 0;
+	color: #fff;
+	font-size: 26px;
+	font-weight: 800;
+	line-height: 1.15;
+	letter-spacing: -0.03em;
+}
+
+.cc-buyer-hero p {
+	margin: 6px 0 0;
+	color: rgba(255, 255, 255, 0.68);
+	font-size: 12px;
+}
+
+.cc-buyer-hero__button {
+	display: inline-flex;
+	min-height: 42px;
+	flex: 0 0 auto;
+	align-items: center;
+	justify-content: center;
+	gap: 7px;
+	padding: 0 17px;
+	border-radius: 6px;
+	background: #f23b4f;
+	color: #fff;
+	font-size: 11px;
+	font-weight: 750;
+	text-decoration: none;
+}
+
+.cc-buyer-hero__button:hover {
+	background: #d92f43;
+	color: #fff;
+}
+
+/* =========================================================
+   Данные компании
+   ========================================================= */
+
+.cc-buyer-company {
+	display: grid;
+	grid-template-columns: minmax(220px, 1.4fr) repeat(4, minmax(120px, 1fr));
+	margin-bottom: 14px;
+	border: 1px solid #dfe4ea;
+	border-radius: 8px;
+	background: #fff;
+	overflow: hidden;
+}
+
+.cc-buyer-company__item {
+	min-width: 0;
+	padding: 16px 18px;
+	border-right: 1px solid #e7ebf0;
+}
+
+.cc-buyer-company__item:last-child {
+	border-right: 0;
+}
+
+.cc-buyer-company__item span {
+	display: block;
+	margin-bottom: 6px;
+	color: #8a94a3;
+	font-size: 9px;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+.cc-buyer-company__item strong {
+	display: block;
+	overflow: hidden;
+	color: #001d3d;
+	font-size: 12px;
+	font-weight: 750;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* =========================================================
+   Рабочая область
+   ========================================================= */
+
+.cc-buyer-workspace {
+	border: 1px solid #dfe4ea;
+	border-radius: 8px;
+	background: #fff;
+	overflow: hidden;
+}
+
+.cc-buyer-workspace__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 19px 20px 15px;
+	border-bottom: 1px solid #e7ebf0;
+}
+
+.cc-buyer-workspace__header h2 {
+	margin: 0;
+	color: #001d3d;
+	font-size: 18px;
+	font-weight: 800;
+}
+
+.cc-buyer-workspace__header p {
+	margin: 5px 0 0;
+	color: #7b8492;
+	font-size: 10px;
+}
+
+/* =========================================================
+   Поиск и фильтры
+   ========================================================= */
+
+.cc-buyer-toolbar {
+	display: flex;
+	align-items: center;
+	gap: 9px;
+	padding: 12px 20px;
+	border-bottom: 1px solid #e7ebf0;
+	background: #fafbfc;
+}
+
+.cc-buyer-search {
+	position: relative;
+	display: block;
+	width: min(420px, 100%);
+}
+
+.cc-buyer-search__icon {
+	position: absolute;
+	top: 50%;
+	left: 12px;
+	display: flex;
+	color: #8d98a7;
+	transform: translateY(-50%);
+	pointer-events: none;
+}
+
+.cc-buyer-search__icon svg {
+	width: 16px;
+	height: 16px;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 1.8;
+	stroke-linecap: round;
+}
+
+.cc-buyer-search input,
+.cc-buyer-status-filter select {
+	height: 38px;
+	margin: 0;
+	border: 1px solid #d5dbe4;
+	border-radius: 6px;
+	background: #fff;
+	color: #344054;
+	font-size: 11px;
+	outline: none;
+}
+
+.cc-buyer-search input {
+	width: 100%;
+	padding: 0 12px 0 38px;
+}
+
+.cc-buyer-status-filter select {
+	min-width: 170px;
+	padding: 0 32px 0 11px;
+}
+
+.cc-buyer-search input:focus,
+.cc-buyer-status-filter select:focus {
+	border-color: #001d3d;
+	box-shadow: 0 0 0 3px rgba(0, 29, 61, 0.08);
+}
+
+.cc-buyer-filter-button {
+	display: inline-flex;
+	min-height: 38px;
+	align-items: center;
+	justify-content: center;
+	padding: 0 16px;
+	border: 0;
+	border-radius: 6px;
+	background: #001d3d;
+	color: #fff;
+	font-size: 10px;
+	font-weight: 750;
+	cursor: pointer;
+}
+
+.cc-buyer-filter-button:hover {
+	background: #0b3158;
+}
+
+.cc-buyer-reset {
+	color: #667085;
+	font-size: 10px;
+	font-weight: 650;
+}
+
+.cc-buyer-reset:hover {
+	color: #f23b4f;
+}
+
+/* =========================================================
+   Таблица заказов
+   ========================================================= */
+
+.cc-buyer-orders-table__head,
+.cc-buyer-order-row {
+	display: grid;
+	grid-template-columns:
+		90px
+		105px
+		minmax(250px, 1.6fr)
+		minmax(150px, 0.8fr)
+		125px
+		40px;
+	align-items: center;
+	gap: 12px;
+}
+
+.cc-buyer-orders-table__head {
+	min-height: 39px;
+	padding: 0 20px;
+	border-bottom: 1px solid #e7ebf0;
+	background: #f7f8fa;
+	color: #8a94a3;
+	font-size: 9px;
+	font-weight: 750;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+.cc-buyer-order-row {
+	min-height: 72px;
+	padding: 11px 20px;
+	border-bottom: 1px solid #edf0f3;
+	background: #fff;
+	transition: background 0.15s ease;
+}
+
+.cc-buyer-order-row:last-child {
+	border-bottom: 0;
+}
+
+.cc-buyer-order-row:hover {
+	background: #fafbfc;
+}
+
+.cc-buyer-order-row__number span {
+	display: block;
+	margin-bottom: 4px;
+	color: #98a2b3;
+	font-size: 8px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.cc-buyer-order-row__number strong {
+	color: #001d3d;
+	font-size: 12px;
+	font-weight: 800;
+}
+
+.cc-buyer-order-row__date {
+	color: #475467;
+	font-size: 11px;
+	font-weight: 600;
+}
+
+.cc-buyer-order-row__products {
+	min-width: 0;
+}
+
+.cc-buyer-order-row__products strong {
+	display: block;
+	overflow: hidden;
+	color: #1d2939;
+	font-size: 11px;
+	font-weight: 700;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.cc-buyer-order-row__products span {
+	display: block;
+	margin-top: 4px;
+	color: #98a2b3;
+	font-size: 9px;
+}
+
+.cc-buyer-status {
+	display: inline-flex;
+	min-height: 27px;
+	align-items: center;
+	gap: 6px;
+	padding: 4px 9px;
+	border-radius: 999px;
+	background: #f2f4f7;
+	color: #475467;
+	font-size: 9px;
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+.cc-buyer-status i {
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: currentColor;
+}
+
+.cc-buyer-status--processing,
+.cc-buyer-status--completed {
+	background: #eaf8f1;
+	color: #087443;
+}
+
+.cc-buyer-status--pending,
+.cc-buyer-status--on-hold {
+	background: #fff5df;
+	color: #a76100;
+}
+
+.cc-buyer-status--cancelled,
+.cc-buyer-status--failed,
+.cc-buyer-status--refunded {
+	background: #fff0f2;
+	color: #c52f40;
+}
+
+.cc-buyer-order-row__total {
+	color: #001d3d;
+	font-size: 11px;
+	font-weight: 800;
+	text-align: right;
+	white-space: nowrap;
+}
+
+.cc-buyer-order-row__action {
+	text-align: right;
+}
+
+.cc-buyer-order-row__action a {
+	display: inline-flex;
+	width: 30px;
+	height: 30px;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #dfe4ea;
+	border-radius: 6px;
+	background: #fff;
+	color: #667085;
+}
+
+.cc-buyer-order-row__action a:hover {
+	border-color: #f23b4f;
+	background: #fff3f4;
+	color: #f23b4f;
+}
+
+.cc-buyer-order-row__action svg {
+	width: 15px;
+	height: 15px;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+/* =========================================================
+   Пустое состояние
+   ========================================================= */
+
+.cc-buyer-empty {
+	padding: 60px 24px;
+	text-align: center;
+}
+
+.cc-buyer-empty__icon {
+	display: flex;
+	width: 48px;
+	height: 48px;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto 14px;
+	border-radius: 8px;
+	background: #eef2f6;
+	color: #667085;
+}
+
+.cc-buyer-empty__icon svg {
+	width: 23px;
+	height: 23px;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 1.7;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.cc-buyer-empty h3 {
+	margin: 0;
+	color: #001d3d;
+	font-size: 17px;
+}
+
+.cc-buyer-empty p {
+	margin: 7px 0 16px;
+	color: #667085;
+	font-size: 11px;
+}
+
+.cc-buyer-empty a {
+	display: inline-flex;
+	min-height: 38px;
+	align-items: center;
+	padding: 0 15px;
+	border-radius: 6px;
+	background: #f23b4f;
+	color: #fff;
+	font-size: 10px;
+	font-weight: 750;
+}
+
+/* =========================================================
+   Адаптивность
+   ========================================================= */
+
+@media (max-width: 1100px) {
+	.cc-buyer-company {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.cc-buyer-company__item:nth-child(3) {
+		border-right: 0;
+	}
+
+	.cc-buyer-company__item:nth-child(n + 4) {
+		border-top: 1px solid #e7ebf0;
+	}
+
+	.cc-buyer-orders-table__head,
+	.cc-buyer-order-row {
+		grid-template-columns:
+			80px
+			90px
+			minmax(180px, 1fr)
+			130px
+			110px
+			34px;
+	}
+}
+
+@media (max-width: 820px) {
+	.cc-buyer-hero {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.cc-buyer-company {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.cc-buyer-company__item {
+		border-top: 1px solid #e7ebf0;
+	}
+
+	.cc-buyer-company__item:nth-child(odd) {
+		border-right: 1px solid #e7ebf0;
+	}
+
+	.cc-buyer-company__item:nth-child(even) {
+		border-right: 0;
+	}
+
+	.cc-buyer-company__item:first-child,
+	.cc-buyer-company__item:nth-child(2) {
+		border-top: 0;
+	}
+
+	.cc-buyer-toolbar {
+		flex-wrap: wrap;
+	}
+
+	.cc-buyer-search {
+		width: 100%;
+		flex-basis: 100%;
+	}
+
+	.cc-buyer-status-filter {
+		flex: 1;
+	}
+
+	.cc-buyer-status-filter select {
+		width: 100%;
+	}
+
+	.cc-buyer-orders-table__head {
+		display: none;
+	}
+
+	.cc-buyer-order-row {
+		grid-template-columns: 1fr auto;
+		gap: 11px 18px;
+		padding: 16px;
+	}
+
+	.cc-buyer-order-row__number,
+	.cc-buyer-order-row__products {
+		grid-column: 1;
+	}
+
+	.cc-buyer-order-row__date,
+	.cc-buyer-order-row__status,
+	.cc-buyer-order-row__total,
+	.cc-buyer-order-row__action {
+		grid-column: 2;
+		text-align: right;
+	}
+}
+
+@media (max-width: 520px) {
+	.cc-buyer-company {
+		display: block;
+	}
+
+	.cc-buyer-company__item {
+		border-top: 1px solid #e7ebf0 !important;
+		border-right: 0 !important;
+	}
+
+	.cc-buyer-company__item:first-child {
+		border-top: 0 !important;
+	}
+
+	.cc-buyer-hero {
+		padding: 20px;
+	}
+
+	.cc-buyer-hero__identity {
+		align-items: flex-start;
+	}
+
+	.cc-buyer-hero__button {
+		width: 100%;
+	}
+
+	.cc-buyer-filter-button {
+		flex: 1;
+	}
+
+	.cc-buyer-orders-page
+	:is(nav, div):has(> a[href*="cc_section=dashboard"]) {
+		overflow-x: auto;
+	}
+
+	.cc-buyer-orders-page
+	:is(nav, div):has(> a[href*="cc_section=dashboard"])
+	> a {
+		flex: 0 0 auto;
+		white-space: nowrap;
+	}
+}

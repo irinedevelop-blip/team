@@ -1,0 +1,304 @@
+/*
+ * Общая оболочка кабинета:
+ * Главная, Мои заказы, Бонусы и вывод.
+ */
+
+/* =========================================================
+   Одинаковая ширина всех разделов
+   ========================================================= */
+
+body.cc-cabinet-section .cc-content {
+	width: 100%;
+	max-width: none;
+	padding-top: 28px;
+}
+
+body.cc-cabinet-section .cc-content > * {
+	width: 100%;
+	max-width: 1440px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/*
+ * Убирает старое ограничение ширины вокруг страницы заказов.
+ */
+body.cc-section-cabinet
+.cc-content
+:is(div, main, section):has(.cc-buyer-orders) {
+	width: 100%;
+	max-width: none;
+	margin-right: 0;
+	margin-left: 0;
+}
+
+/* =========================================================
+   Единая верхняя навигация
+   ========================================================= */
+
+body.cc-cabinet-section
+:is(nav, div):has(> a[href*="cc_section=dashboard"]):has(> a[href*="cc_section=cabinet"]):has(> a[href*="cc_section=bonuses"]) {
+	display: flex !important;
+	min-height: 50px;
+	align-items: center;
+	gap: 5px;
+	width: 100%;
+	margin: 0 0 14px !important;
+	padding: 6px !important;
+	border: 1px solid #dfe4ea !important;
+	border-top: 2px solid #001d3d !important;
+	border-radius: 8px !important;
+	background: #fff !important;
+	box-shadow: 0 2px 8px rgba(0, 29, 61, 0.04) !important;
+}
+
+body.cc-cabinet-section
+:is(nav, div):has(> a[href*="cc_section=dashboard"]):has(> a[href*="cc_section=cabinet"]):has(> a[href*="cc_section=bonuses"])
+> a {
+	display: inline-flex !important;
+	min-height: 36px !important;
+	align-items: center !important;
+	justify-content: center !important;
+	padding: 0 16px !important;
+	border: 1px solid transparent !important;
+	border-radius: 6px !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	color: #475467 !important;
+	font-size: 11px !important;
+	font-weight: 700 !important;
+	line-height: 1 !important;
+	text-decoration: none !important;
+	white-space: nowrap;
+	transition:
+		background 0.15s ease,
+		border-color 0.15s ease,
+		color 0.15s ease;
+}
+
+body.cc-cabinet-section
+:is(nav, div):has(> a[href*="cc_section=dashboard"]):has(> a[href*="cc_section=cabinet"]):has(> a[href*="cc_section=bonuses"])
+> a:hover {
+	border-color: #dfe4ea !important;
+	background: #f6f8fa !important;
+	color: #001d3d !important;
+}
+
+/* Активная вкладка: Главная. */
+body.cc-section-dashboard
+:is(nav, div):has(> a[href*="cc_section=dashboard"]):has(> a[href*="cc_section=cabinet"]):has(> a[href*="cc_section=bonuses"])
+> a[href*="cc_section=dashboard"] {
+	border-color: #f23b4f !important;
+	background: #f23b4f !important;
+	color: #fff !important;
+}
+
+/* Активная вкладка: Мои заказы. */
+body.cc-section-cabinet
+:is(nav, div):has(> a[href*="cc_section=dashboard"]):has(> a[href*="cc_section=cabinet"]):has(> a[href*="cc_section=bonuses"])
+> a[href*="cc_section=cabinet"] {
+	border-color: #f23b4f !important;
+	background: #f23b4f !important;
+	color: #fff !important;
+}
+
+/* Активная вкладка: Бонусы. */
+body.cc-section-bonuses
+:is(nav, div):has(> a[href*="cc_section=dashboard"]):has(> a[href*="cc_section=cabinet"]):has(> a[href*="cc_section=bonuses"])
+> a[href*="cc_section=bonuses"] {
+	border-color: #f23b4f !important;
+	background: #f23b4f !important;
+	color: #fff !important;
+}
+
+/* =========================================================
+   Светлая шапка страницы заказов
+   ========================================================= */
+
+body.cc-section-cabinet .cc-buyer-hero {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+	margin-bottom: 14px;
+	padding: 22px 24px;
+	border: 1px solid #dfe4ea;
+	border-top: 3px solid #001d3d;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: 0 2px 8px rgba(0, 29, 61, 0.035);
+	color: #152235;
+}
+
+body.cc-section-cabinet .cc-buyer-hero__identity {
+	display: flex;
+	min-width: 0;
+	align-items: center;
+	gap: 15px;
+}
+
+body.cc-section-cabinet .cc-buyer-hero__avatar {
+	display: flex;
+	width: 46px;
+	height: 46px;
+	flex: 0 0 46px;
+	align-items: center;
+	justify-content: center;
+	border: 0;
+	border-radius: 7px;
+	background: #001d3d;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 800;
+}
+
+body.cc-section-cabinet .cc-buyer-hero__eyebrow {
+	margin-bottom: 5px;
+	color: #f23b4f;
+	font-size: 9px;
+	font-weight: 800;
+	letter-spacing: 0.13em;
+	text-transform: uppercase;
+}
+
+body.cc-section-cabinet .cc-buyer-hero h1 {
+	margin: 0;
+	color: #001d3d;
+	font-size: 25px;
+	font-weight: 800;
+	line-height: 1.15;
+	letter-spacing: -0.03em;
+}
+
+body.cc-section-cabinet .cc-buyer-hero p {
+	margin: 6px 0 0;
+	color: #667085;
+	font-size: 11px;
+	line-height: 1.5;
+}
+
+body.cc-section-cabinet .cc-buyer-hero__button {
+	display: inline-flex;
+	min-height: 42px;
+	flex: 0 0 auto;
+	align-items: center;
+	justify-content: center;
+	gap: 7px;
+	padding: 0 17px;
+	border: 1px solid #f23b4f;
+	border-radius: 6px;
+	background: #f23b4f;
+	color: #fff;
+	font-size: 11px;
+	font-weight: 750;
+	text-decoration: none;
+}
+
+body.cc-section-cabinet .cc-buyer-hero__button:hover {
+	border-color: #d92f43;
+	background: #d92f43;
+	color: #fff;
+}
+
+/* =========================================================
+   Данные компании
+   ========================================================= */
+
+body.cc-section-cabinet .cc-buyer-company {
+	margin-bottom: 14px;
+	border: 1px solid #dfe4ea;
+	border-left: 3px solid #001d3d;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: none;
+}
+
+body.cc-section-cabinet .cc-buyer-company__item {
+	background: #fff;
+}
+
+body.cc-section-cabinet .cc-buyer-company__item span {
+	color: #8a94a3;
+}
+
+body.cc-section-cabinet .cc-buyer-company__item strong {
+	color: #001d3d;
+}
+
+/* =========================================================
+   Заказы
+   ========================================================= */
+
+body.cc-section-cabinet .cc-buyer-workspace {
+	border: 1px solid #dfe4ea;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: none;
+}
+
+body.cc-section-cabinet .cc-buyer-workspace__header {
+	padding: 18px 20px 14px;
+	background: #fff;
+}
+
+body.cc-section-cabinet .cc-buyer-workspace__header h2 {
+	color: #001d3d;
+}
+
+body.cc-section-cabinet .cc-buyer-toolbar {
+	background: #f8f9fb;
+}
+
+body.cc-section-cabinet .cc-buyer-filter-button {
+	background: #001d3d;
+	color: #fff;
+}
+
+body.cc-section-cabinet .cc-buyer-filter-button:hover {
+	background: #0b3158;
+}
+
+body.cc-section-cabinet .cc-buyer-order-row {
+	background: #fff;
+}
+
+body.cc-section-cabinet .cc-buyer-order-row:hover {
+	background: #f8fafc;
+}
+
+body.cc-section-cabinet .cc-buyer-order-row__action a:hover {
+	border-color: #f23b4f;
+	background: #fff3f4;
+	color: #f23b4f;
+}
+
+/* =========================================================
+   Мобильная версия
+   ========================================================= */
+
+@media (max-width: 760px) {
+	body.cc-cabinet-section .cc-content {
+		padding-top: 18px;
+	}
+
+	body.cc-cabinet-section
+	:is(nav, div):has(> a[href*="cc_section=dashboard"]):has(> a[href*="cc_section=cabinet"]):has(> a[href*="cc_section=bonuses"]) {
+		overflow-x: auto;
+		justify-content: flex-start;
+	}
+
+	body.cc-cabinet-section
+	:is(nav, div):has(> a[href*="cc_section=dashboard"]):has(> a[href*="cc_section=cabinet"]):has(> a[href*="cc_section=bonuses"])
+	> a {
+		flex: 0 0 auto;
+	}
+
+	body.cc-section-cabinet .cc-buyer-hero {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	body.cc-section-cabinet .cc-buyer-hero__button {
+		width: 100%;
+	}
+}
